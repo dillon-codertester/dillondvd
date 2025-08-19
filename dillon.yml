@@ -1,0 +1,16 @@
+name: Dillon Reminder
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Runs every minute
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message to Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content":"DILLON IS STILL HERE"}' \
+               https://discord.com/api/webhooks/1407307377707061330/ikEYWvYZH5jQrnQ-tZZubuxDIFidXYd2uzp-1KU0eL58n9aehg7bFzXd8iC2p2Wxrc98
